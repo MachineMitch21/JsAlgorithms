@@ -1,9 +1,9 @@
 const fs = require('fs');
-const requrest = require('request');
+const request = require('request');
 
 const download = function(url, dest, cb) {
 	const file = fs.createWriteStream(dest);
-	const sendReq = requrest.get(url);
+	const sendReq = request.get(url);
 
 	sendReq.on('response', (response) => {
 		if (response.statusCode !== 200) {
